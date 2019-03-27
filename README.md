@@ -30,6 +30,8 @@ browser.url doesn't work!!!!
 
 Security vulnerabilities in the required packages.
 
+Failed horribly on the slow website - need to add 'waitUntil' everywhere??? Could we incorporate this into a helper function to wait for all elements?
+
 
 ### WebdriverIO-v5 boilerplate code with Jasmine BDD
 
