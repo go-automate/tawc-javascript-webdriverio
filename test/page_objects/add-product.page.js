@@ -9,5 +9,5 @@ class AddProductPage extends Page {
     get productPrice() { return $('[formcontrolname=prod_price]'); }
     get submitButton() { return $('[type=submit]'); }
 
-};
+}
 module.exports = new AddProductPage();

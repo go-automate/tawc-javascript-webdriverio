@@ -28,6 +28,8 @@ the '=' doesn't seem to work for searching by text - didn't work for parameteriz
 
 browser.url doesn't work!!!!  
 
+Security vulnerabilities in the required packages.
+
 
 ### WebdriverIO-v5 boilerplate code with Jasmine BDD
 

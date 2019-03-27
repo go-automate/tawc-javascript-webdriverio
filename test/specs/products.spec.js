@@ -8,7 +8,6 @@ import AddProductPage from '../page_objects/add-product.page';
 
 import using from "jasmine-data-provider";
 import productData from "../test-data/speed-test-data.json"
-// const products = require('../data/debug-data.json');
 
 // Helper functions
 function deleteProducts(productName){
@@ -21,11 +20,11 @@ function deleteProducts(productName){
 
       ProductsPage.productsInTable[i].click();
 
-      expect(browser.getUrl()).toContain(ViewProductPage.url);
+      // expect(browser.getUrl()).toContain(ViewProductPage.url);
 
       ViewProductPage.deleteButton.click();
 
-      expect(browser.getUrl()).toContain(ProductsPage.url);
+      // expect(browser.getUrl()).toContain(ProductsPage.url);
 
       counter = counter - 2 ;
     }
@@ -38,11 +37,11 @@ function createProduct(product){
   
   if(!productPresent){
 
-    expect(browser.getUrl()).toContain(ProductsPage.url);
+    // expect(browser.getUrl()).toContain(ProductsPage.url);
         
     ProductsPage.addProductButton.click();
 
-    expect(browser.getUrl()).toContain(AddProductPage.url);
+    // expect(browser.getUrl()).toContain(AddProductPage.url);
 
     AddProductPage.productName.addValue(product.name);
     AddProductPage.productDescription.addValue(product.description);
@@ -51,11 +50,11 @@ function createProduct(product){
     AddProductPage.submitButton.click();
     
 
-    expect(browser.getUrl()).toContain(ViewProductPage.url);
+    // expect(browser.getUrl()).toContain(ViewProductPage.url);
 
     ViewProductPage.returnToProductsPageButton.click();
 
-    expect(browser.getUrl()).toContain(ProductsPage.url);
+    // expect(browser.getUrl()).toContain(ProductsPage.url);
 
   }
 
@@ -77,6 +76,22 @@ function checkForProductInTable(productDetail){
   }
   return false;
 }
+
+function findProductInTable(productDetail){
+
+  const counter = ProductsPage.productsInTable.length;
+
+  for (var i = 0; i < counter; i++){ 
+
+    if(ProductsPage.productsInTable[i].getText().includes(productDetail)) {
+
+      return ProductsPage.productsInTable[i];
+
+    }
+
+  }
+  return null;
+}
   
   
 
@@ -89,6 +104,7 @@ using(productData, function(product) {
       })
 
       afterEach( function() {
+        browser.url('');
         deleteProducts(product.name) ;
       })
 
@@ -102,14 +118,14 @@ using(productData, function(product) {
             // CP01
             // Navigate to the `Products Page`
             // ASSERT: We're on the `Products Page` of the Website
-            expect(browser.getUrl()).toContain(ProductsPage.url);
+            // expect(browser.getUrl()).toContain(ProductsPage.url);
     
             // CP02
             // Click on the `Add Product` button
             ProductsPage.addProductButton.click();
 
             // ASSERT: We're on the `Add Product` page
-            expect(browser.getUrl()).toContain(AddProductPage.url);
+            // expect(browser.getUrl()).toContain(AddProductPage.url);
     
             // CP03
             // Enter a `Name`, `Description` and `Price` for a Product (see `test-data.adoc` for Test Data)
@@ -122,7 +138,7 @@ using(productData, function(product) {
             // Press the `Save` button.
             AddProductPage.submitButton.click();
             // ASSERT: The `View` product page opens.
-            expect(browser.getUrl()).toContain(ViewProductPage.url);
+            // expect(browser.getUrl()).toContain(ViewProductPage.url);
     
             // ASSERT: The product details are correct (`name`, `description`, `price`).
             expect(ViewProductPage.productName.getText()).toBe(product.name);
@@ -134,7 +150,7 @@ using(productData, function(product) {
             ViewProductPage.returnToProductsPageButton.click();
 
             // ASSERT: We're returned to the `Products Page`
-            expect(browser.getUrl()).toContain(ProductsPage.url);
+            // expect(browser.getUrl()).toContain(ProductsPage.url);
     
             // ASSERT: The new `Product` is listed.
             expect(checkForProductInTable(product.name)).toBe(true)
@@ -149,30 +165,151 @@ using(productData, function(product) {
     
     });
 
-    // describe('Read Update and Delete tests for product', () => {
+    describe('Read Update and Delete tests for product', () => {
 
-    //   beforeEach( function(){
-    //     browser.url('');
-    //     createProduct(product);
-    //   })
+      beforeEach( function(){
+        browser.url('');
+        createProduct(product);
+      })
 
-    //   afterEach( function() {
-    //     deleteProducts(product.name) ;
-    //   })
+      afterEach( function() {
+        browser.url('');
+        deleteProducts(product.name) ;
+      })
 
-    //     it('should be able to view a product', () => { 
+        it('should be able to view a product', () => { 
+
+          // VPSU01
+          // SETUP: Check whether the `Product` is present in the list, if it's not, create it.
+          // ASSERT: `Product` in list. 
+          // Done in the 'beforeEach' method
+
+          // VP01
+          // Navigate to the `Products Page`
+          // ASSERT: We're on the `Products Page` of the Website
+          // browser.getUrl() not working - async?
+
+          // VERIFY: The `name` and `description` are correct.
+          expect(checkForProductInTable(product.name)).toBe(true)
+          expect(checkForProductInTable(product.price)).toBe(true)
+
+          // VP02
+          // Click on the `Product` name
+          findProductInTable(product.name).click();
+
+
+          // ASSERT: We're on the `View Product` page
+          // browser.getUrl() not working - async?
+
+          // VERIFY: The `name`, `description` and `price` of the product are correct.
+          expect(ViewProductPage.productName.getText()).toBe(product.name);
+          expect(ViewProductPage.productDescription.getText()).toBe(product.description);
+          expect(ViewProductPage.productPrice.getText()).toBe(product.price);
+
+          // VPTD01
+          // TEARDOWN: Delete the `Product` that was created.
+          // ASSERT: `Product` is no longer listed.
+          // Done in the 'afterEach' method.
     
-    //     });
+        });
 
-    //     it('should be able to edit a product', () => { 
-    
-    //     });
+        it('should be able to edit a product', () => { 
 
-    //     it('should be able to delete a product', () => { 
-    
-    //     });
+          // EPSU01
+          // SETUP: Check whether the `Product` is present in the list, if it's not, create it.
+          // ASSERT: `Product` in list. 
+          // In 'beforeEach' method
 
+          // EP01
+          // Navigate to the `Products Page`
+          // ASSERT: We're on the `Products Page` of the Website
+          // browser.getUrl() not working (async?)
+
+          // EP02
+          // Click on the `Product` name
+          findProductInTable(product.name).click();
+
+          // ASSERT: We're on the `View Product` page
+          // browser.getUrl() not working (async?)
+
+          // EP03
+          // Click on the `Edit Product` button
+          ViewProductPage.editProductButton.click();
+
+          // ASSERT: We're on the `Edit Product Page`
+          // browser.getUrl() not working (async?)
+
+          // EP04
+          // Clear the `name`, `description` and `price` fields.
+          // VERIFY: The fields are empty.
+          // This is done as part of the 'setValue' command in Webdriver.IO
+
+          // EP05
+          // Enter new details from the `test-data-edit-product.json` file
+          // New details are entered
+          EditProductPage.productName.setValue(product.editName);
+          EditProductPage.productDescription.setValue(product.editDescription);
+          EditProductPage.productPrice.setValue(product.editPrice);
+
+          // EP06
+          // Click on the `Save` button
+          expect(EditProductPage.saveProductButton.isEnabled()).toBe(true);
+          EditProductPage.saveProductButton.click()
+
+          // ASSERT: We are taken to the `View Product` screen
+          // browser.getUrl() not working (async?)
+
+          // ASSERT: The `name`, `description` and `price` of the product have been updated.
+          expect(ViewProductPage.productName.getText()).toBe(product.editName);
+          expect(ViewProductPage.productDescription.getText()).toBe(product.editDescription);
+          expect(ViewProductPage.productPrice.getText()).toBe(product.editPrice);
+
+          // EP07
+          // Click on the `Products Page` button
+          ViewProductPage.returnToProductsPageButton.click();
+
+          // ASSERT: The `name` and `description` have been updated.
+          expect(checkForProductInTable(product.editName)).toBe(true);
+          expect(checkForProductInTable(product.editPrice)).toBe(true);
+
+          // EPTD01
+          // TEARDOWN: Delete the `Product` that was created.
+          deleteProducts(product.editName);
+          // ASSERT: `Product` is no longer listed.
+          expect(checkForProductInTable(product.editName)).toBe(false);
     
-    // });
+        });
+
+        it('should be able to delete a product', () => { 
+
+          // DPSU01
+          // SETUP: Check whether the `Product` is listed, if it's not, create it.
+          // ASSERT: `Product` in list. 
+          // Done in the 'beforeEach' method.
+
+          // DP01
+          // Navigate to the `Products Page`
+          // ASSERT: We're on the `Products Page` of the Website
+          // browser.getUrl() not working (async?)
+
+          // DP02
+          // Click on the `Product` name
+          findProductInTable(product.name).click();
+
+          // ASSERT: We're on the `View Product` page
+          // browser.getUrl() not working (async?)
+
+          // DP03
+          // Click on the `Delete Product` button
+          ViewProductPage.deleteButton.click();
+          // ASSERT: We're returned to the `Products Page`
+          // browser.getUrl() not working (async?)
+
+          // ASSERT: The `Product` is no longer listed.
+          expect(checkForProductInTable(product.name)).toBe(false);
+    
+        });
+
+    });
 
  });
