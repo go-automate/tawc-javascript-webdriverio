@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CRUD_tests_for_product" timestamp="2019-03-27T11:30:53" time="12.249" tests="1" failures="0" errors="1" skipped="0">
+  <testsuite name="Create_tests_for_product" timestamp="2019-03-27T16:59:26" time="4.462" tests="1" failures="0" errors="1" skipped="0">
     <properties>
       <property name="specId" value="0"/>
-      <property name="suiteName" value="CRUD tests for product"/>
+      <property name="suiteName" value="Create tests for product"/>
       <property name="capabilities" value="chrome"/>
       <property name="file" value="./test/specs/products.spec.js"/>
     </properties>
-    <testcase classname="chrome.CRUD_tests_for_product" name="should_be_able_to_create_a_product" time="12.246">
-      <error message="Error: Can't call addValue on element with selector &quot;#mat-input-0&quot; because element wasn't found"/>
+    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_aute" time="4.46">
+      <error message="Expected 'http://localhost:8080/product-add' to contain 'product-details'."/>
       <system-err>
         <![CDATA[
-Error: Can't call addValue on element with selector "#mat-input-0" because element wasn't found
-    at addValue (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:51:36)
-    at UserContext.createProduct (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:78:13)
+Error: Expected 'http://localhost:8080/product-add' to contain 'product-details'.
+    at <Jasmine>
+    at <Jasmine>
+    at UserContext.toContain (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:125:38)
+]]>
+      </system-err>
+    </testcase>
+  </testsuite>
+  <testsuite name="Create_tests_for_product" timestamp="2019-03-27T16:59:30" time="3.476" tests="1" failures="0" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Create tests for product"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/products.spec.js"/>
+    </properties>
+    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_cillum" time="3.474">
+      <error message="Expected 'http://localhost:8080/product-details/5c9babf5b510220017338927' to contain 'products'."/>
+      <system-err>
+        <![CDATA[
+Error: Expected 'http://localhost:8080/product-details/5c9babf5b510220017338927' to contain 'products'.
+    at <Jasmine>
+    at <Jasmine>
+    at toContain (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:28:32)
+    at UserContext.deleteProducts (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:92:9)
 ]]>
       </system-err>
     </testcase>

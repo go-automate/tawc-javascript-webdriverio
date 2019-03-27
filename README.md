@@ -1,3 +1,34 @@
+
+# To do
+
+The selectors are really good - especially for searching by text:
+
+https://webdriver.io/docs/selectors.html
+
+Had to use node 10 in order to get my 'import' and page objects working.
+
+Still didn't work! Had to install babel:
+
+https://webdriver.io/docs/babel.html
+
+Switch to Jasmine?
+
+Ran into this problem:https://github.com/webdriverio/webdriverio/issues/3256
+
+ALso babel instructions didn't work.
+
+And had this problem:
+https://github.com/webdriverio/webdriverio/issues/660
+
+Regression issues
+
+Couldn't use node 10 as WebDriverIO didn't work - had an outstanding issue on Windows at the time.
+
+the '=' doesn't seem to work for searching by text - didn't work for parameterization anyway :(
+
+browser.url doesn't work!!!!  
+
+
 ### WebdriverIO-v5 boilerplate code with Jasmine BDD
 
 This repository contains a collection of sample webdriverIO (v5x) projects and libraries that demonstrate how to use the tool and develop automation script using the Jasmine BDD framework. It support ES6, ES8 (via babel-register) and uses Grunt to manage tasks, provides utilities to read data from MS-Excel, executes SQL statements to any database(RDBMS such as Oracle, TeraData, MySQL, Vertica) for end to end testing. It generate Spec, JUNIT, Allure reporters as well.

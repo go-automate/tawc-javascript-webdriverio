@@ -11,13 +11,11 @@ class ViewProductPage extends Page {
 
     get editProductButton() { return $("mat-card-actions a.mat-flat-button.mat-primary"); }
 
+    get productName() { return $('h2'); }
 
-    // Parameterized Web Elements + Locators
-    productName(productName) { return $(`h2='${productName}'`); }
+    get productDescription() { return $('mat-card-subtitle.mat-card-subtitle'); }
 
-    productDescription(productDescription) { return $(`mat-card-subtitle='${productDescription}'`); }
-
-    productPrice(productPrice) { return $(`dd='${productPrice}'`); }
+    get productPrice() { return $('mat-card-content.mat-card-content dd:first-of-type'); }
 
 }
 
