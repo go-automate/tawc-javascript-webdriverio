@@ -1,4 +1,4 @@
-{"level":"INFO","message":"Capabilities are: {\n  \"browserName\": \"chrome\",\n  \"goog:chromeOptions\": {\n  }\n}","timestamp":1548217808741}
-{"level":"INFO","message":"Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)","timestamp":1548217808743}
-{"level":"INFO","message":"Detected dialect: OSS","timestamp":1548217810557}
-{"level":"INFO","message":"Started new session 410db208650148b180a46cbebd99a4a9 (org.openqa.selenium.chrome.ChromeDriverService)","timestamp":1548217811031}
+{"level":"INFO","message":"Capabilities are: {\n  \"browserName\": \"chrome\",\n  \"goog:chromeOptions\": {\n  }\n}","timestamp":1553686251847}
+{"level":"INFO","message":"Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)","timestamp":1553686251849}
+{"level":"INFO","message":"Detected dialect: OSS","timestamp":1553686253091}
+{"level":"INFO","message":"Started new session 13123884936746111daa476f4f500edd (org.openqa.selenium.chrome.ChromeDriverService)","timestamp":1553686253373}

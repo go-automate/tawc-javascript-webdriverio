@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="navigating_to_contact_us_page" timestamp="2019-01-22T22:30:11" time="4.53" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="CRUD_tests_for_product" timestamp="2019-03-27T11:30:53" time="12.249" tests="1" failures="0" errors="1" skipped="0">
     <properties>
       <property name="specId" value="0"/>
-      <property name="suiteName" value="navigating to contact-us page"/>
+      <property name="suiteName" value="CRUD tests for product"/>
       <property name="capabilities" value="chrome"/>
-      <property name="file" value="./test/specs/ta-contact-us.spec.js"/>
+      <property name="file" value="./test/specs/products.spec.js"/>
     </properties>
-    <testcase classname="chrome.navigating_to_contact_us_page" name="should_allow_user_to_navigating_contact_us_page" time="4.502"/>
+    <testcase classname="chrome.CRUD_tests_for_product" name="should_be_able_to_create_a_product" time="12.246">
+      <error message="Error: Can't call addValue on element with selector &quot;#mat-input-0&quot; because element wasn't found"/>
+      <system-err>
+        <![CDATA[
+Error: Can't call addValue on element with selector "#mat-input-0" because element wasn't found
+    at addValue (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:51:36)
+    at UserContext.createProduct (/Users/standoubt/vscode/webdriverIO-with-jasmineBDD/test/specs/products.spec.js:78:13)
+]]>
+      </system-err>
+    </testcase>
   </testsuite>
 </testsuites>
