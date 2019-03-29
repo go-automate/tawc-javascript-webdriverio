@@ -11,4 +11,5 @@ before_script:
  - docker restart angular-api
 
 script: 
- - npm test
+ - npm run speedTest
+ - npm run reliabilityTest

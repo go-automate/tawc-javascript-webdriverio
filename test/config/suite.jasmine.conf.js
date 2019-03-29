@@ -23,6 +23,15 @@ exports.config = {
     specs: [
         './test/specs/products.spec.js'
     ],
+
+    suites: {
+      speed: [
+          './test/specs/speed-test.spec.js',
+      ],
+      reliability: [
+           './test/specs/reliability-test.spec.js'
+      ]
+  },
     // Patterns to exclude.
     exclude: [
         // './test/specs/file-to-exclude.js'

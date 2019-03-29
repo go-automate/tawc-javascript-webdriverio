@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Create_tests_for_product" timestamp="2019-03-29T16:49:51" time="4.01" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Create tests for product"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/products.spec.js"/>
+    </properties>
+    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_aute" time="4.008"/>
+  </testsuite>
+  <testsuite name="Read_Update_and_Delete_tests_for_product" timestamp="2019-03-29T16:49:55" time="11.115" tests="3" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Read Update and Delete tests for product"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/products.spec.js"/>
+    </properties>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_view_a_product" time="3.297"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_edit_a_product" time="4.919"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_delete_a_product" time="2.896"/>
+  </testsuite>
+  <testsuite name="Create_tests_for_product" timestamp="2019-03-29T16:50:07" time="3.022" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Create tests for product"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/products.spec.js"/>
+    </properties>
+    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_cillum" time="3.02"/>
+  </testsuite>
+  <testsuite name="Read_Update_and_Delete_tests_for_product" timestamp="2019-03-29T16:50:10" time="10.687" tests="3" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Read Update and Delete tests for product"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/products.spec.js"/>
+    </properties>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_view_a_product" time="3.23"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_edit_a_product" time="4.582"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_delete_a_product" time="2.875"/>
+  </testsuite>
+</testsuites>
