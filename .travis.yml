@@ -5,6 +5,10 @@ node_js:
   - "8"
 
 # Need to add a before script in here that fires up the app to get this to work 
+before_script:
+ - docker-compose up -d
+ - sleep 3
+ - docker restart angular-api
 
 script: 
  - npm test
