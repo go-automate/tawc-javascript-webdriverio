@@ -2,6 +2,8 @@ import Page from './page';
 
 class ViewProductPage extends Page {
 
+    get pageIdentifier() { return $('app-product-detail'); }
+
     // Web Elements + Locators
     get url() { return "product-details"; }
 

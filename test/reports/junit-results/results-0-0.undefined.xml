@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Create_tests_for_product" timestamp="2019-03-27T21:22:10" time="4.002" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="Create_tests_for_product" timestamp="2019-03-29T15:21:50" time="3.943" tests="1" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="Create tests for product"/>
       <property name="capabilities" value="chrome"/>
       <property name="file" value="./test/specs/products.spec.js"/>
     </properties>
-    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_aute" time="3.999"/>
+    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_aute" time="3.94"/>
   </testsuite>
-  <testsuite name="Read_Update_and_Delete_tests_for_product" timestamp="2019-03-27T21:22:14" time="10.916" tests="3" failures="0" errors="0" skipped="0">
+  <testsuite name="Read_Update_and_Delete_tests_for_product" timestamp="2019-03-29T15:21:54" time="10.748" tests="3" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="Read Update and Delete tests for product"/>
       <property name="capabilities" value="chrome"/>
       <property name="file" value="./test/specs/products.spec.js"/>
     </properties>
-    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_view_a_product" time="3.254"/>
-    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_edit_a_product" time="4.862"/>
-    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_delete_a_product" time="2.797"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_view_a_product" time="3.192"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_edit_a_product" time="4.763"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_delete_a_product" time="2.791"/>
   </testsuite>
-  <testsuite name="Create_tests_for_product" timestamp="2019-03-27T21:22:24" time="2.912" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="Create_tests_for_product" timestamp="2019-03-29T15:22:05" time="2.938" tests="1" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="Create tests for product"/>
       <property name="capabilities" value="chrome"/>
       <property name="file" value="./test/specs/products.spec.js"/>
     </properties>
-    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_cillum" time="2.909"/>
+    <testcase classname="chrome.Create_tests_for_product" name="should_be_able_to_create_a_product_called_cillum" time="2.936"/>
   </testsuite>
-  <testsuite name="Read_Update_and_Delete_tests_for_product" timestamp="2019-03-27T21:22:27" time="10.421" tests="3" failures="0" errors="0" skipped="0">
+  <testsuite name="Read_Update_and_Delete_tests_for_product" timestamp="2019-03-29T15:22:08" time="10.316" tests="3" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="Read Update and Delete tests for product"/>
       <property name="capabilities" value="chrome"/>
       <property name="file" value="./test/specs/products.spec.js"/>
     </properties>
-    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_view_a_product" time="3.154"/>
-    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_edit_a_product" time="4.497"/>
-    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_delete_a_product" time="2.77"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_view_a_product" time="3.145"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_edit_a_product" time="4.422"/>
+    <testcase classname="chrome.Read_Update_and_Delete_tests_for_product" name="should_be_able_to_delete_a_product" time="2.749"/>
   </testsuite>
 </testsuites>

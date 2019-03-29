@@ -20,11 +20,11 @@ function deleteProducts(productName){
 
       ProductsPage.productsInTable[i].click();
 
-      // expect(browser.getUrl()).toContain(ViewProductPage.url);
+      expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
       ViewProductPage.deleteButton.click();
 
-      // expect(browser.getUrl()).toContain(ProductsPage.url);
+      expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true));
 
       counter = counter - 2 ;
     }
@@ -37,11 +37,11 @@ function createProduct(product){
   
   if(!productPresent){
 
-    // expect(browser.getUrl()).toContain(ProductsPage.url);
+   expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
         
     ProductsPage.addProductButton.click();
 
-    // expect(browser.getUrl()).toContain(AddProductPage.url);
+    expect(AddProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
     AddProductPage.productName.addValue(product.name);
     AddProductPage.productDescription.addValue(product.description);
@@ -50,11 +50,11 @@ function createProduct(product){
     AddProductPage.submitButton.click();
     
 
-    // expect(browser.getUrl()).toContain(ViewProductPage.url);
+    expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
     ViewProductPage.returnToProductsPageButton.click();
 
-    // expect(browser.getUrl()).toContain(ProductsPage.url);
+    expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
 
   }
 
@@ -118,14 +118,14 @@ using(productData, function(product) {
             // CP01
             // Navigate to the `Products Page`
             // ASSERT: We're on the `Products Page` of the Website
-            // expect(browser.getUrl()).toContain(ProductsPage.url);
+            expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
     
             // CP02
             // Click on the `Add Product` button
             ProductsPage.addProductButton.click();
 
             // ASSERT: We're on the `Add Product` page
-            // expect(browser.getUrl()).toContain(AddProductPage.url);
+            expect(AddProductPage.pageIdentifier.isDisplayed()).toBe(true);
     
             // CP03
             // Enter a `Name`, `Description` and `Price` for a Product (see `test-data.adoc` for Test Data)
@@ -138,7 +138,7 @@ using(productData, function(product) {
             // Press the `Save` button.
             AddProductPage.submitButton.click();
             // ASSERT: The `View` product page opens.
-            // expect(browser.getUrl()).toContain(ViewProductPage.url);
+            expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
     
             // ASSERT: The product details are correct (`name`, `description`, `price`).
             expect(ViewProductPage.productName.getText()).toBe(product.name);
@@ -150,7 +150,7 @@ using(productData, function(product) {
             ViewProductPage.returnToProductsPageButton.click();
 
             // ASSERT: We're returned to the `Products Page`
-            // expect(browser.getUrl()).toContain(ProductsPage.url);
+            expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
     
             // ASSERT: The new `Product` is listed.
             expect(checkForProductInTable(product.name)).toBe(true)
