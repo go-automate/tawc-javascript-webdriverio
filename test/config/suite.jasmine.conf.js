@@ -207,6 +207,7 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     before: function (capabilities, specs) {
+        browser.setTimeout({ 'implicit': 10000 });
     },
     /**
      * Runs before a WebdriverIO command gets executed.

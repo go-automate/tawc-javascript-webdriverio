@@ -20,11 +20,11 @@ function deleteProducts(productName){
 
       ProductsPage.productsInTable[i].click();
 
-      expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
+      expect(ViewProductPage.pageIdentifier.isExisting()).toBe(true);
 
       ViewProductPage.deleteButton.click();
 
-      expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+      expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
 
       counter = counter - 2 ;
     }
@@ -37,11 +37,11 @@ function createProduct(product){
   
   if(!productPresent){
 
-   expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+   expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
         
     ProductsPage.addProductButton.click();
 
-    expect(AddProductPage.pageIdentifier.isDisplayed()).toBe(true);
+    expect(AddProductPage.pageIdentifier.isExisting()).toBe(true);
 
     AddProductPage.productName.addValue(product.name);
     AddProductPage.productDescription.addValue(product.description);
@@ -50,11 +50,11 @@ function createProduct(product){
     AddProductPage.submitButton.click();
     
 
-    expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
+    expect(ViewProductPage.pageIdentifier.isExisting()).toBe(true);
 
     ViewProductPage.returnToProductsPageButton.click();
 
-    expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+    expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
 
   }
 
@@ -118,14 +118,14 @@ using(productData, function(product) {
             // CP01
             // Navigate to the `Products Page`
             // ASSERT: We're on the `Products Page` of the Website
-            expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+            expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
     
             // CP02
             // Click on the `Add Product` button
             ProductsPage.addProductButton.click();
 
             // ASSERT: We're on the `Add Product` page
-            expect(AddProductPage.pageIdentifier.isDisplayed()).toBe(true);
+            expect(AddProductPage.pageIdentifier.isExisting()).toBe(true);
     
             // CP03
             // Enter a `Name`, `Description` and `Price` for a Product (see `test-data.adoc` for Test Data)
@@ -138,7 +138,7 @@ using(productData, function(product) {
             // Press the `Save` button.
             AddProductPage.submitButton.click();
             // ASSERT: The `View` product page opens.
-            expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
+            expect(ViewProductPage.pageIdentifier.isExisting()).toBe(true);
     
             // ASSERT: The product details are correct (`name`, `description`, `price`).
             expect(ViewProductPage.productName.getText()).toBe(product.name);
@@ -150,7 +150,7 @@ using(productData, function(product) {
             ViewProductPage.returnToProductsPageButton.click();
 
             // ASSERT: We're returned to the `Products Page`
-            expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+            expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
     
             // ASSERT: The new `Product` is listed.
             expect(checkForProductInTable(product.name)).toBe(true)
@@ -168,6 +168,7 @@ using(productData, function(product) {
     describe('Read Update and Delete tests for product', () => {
 
       beforeEach( function(){
+
         browser.url('');
         createProduct(product);
       })
@@ -187,7 +188,7 @@ using(productData, function(product) {
           // VP01
           // Navigate to the `Products Page`
           // ASSERT: We're on the `Products Page` of the Website
-          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
 
           // VERIFY: The `name` and `description` are correct.
           expect(checkForProductInTable(product.name)).toBe(true)
@@ -223,21 +224,21 @@ using(productData, function(product) {
           // EP01
           // Navigate to the `Products Page`
           // ASSERT: We're on the `Products Page` of the Website
-          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
 
           // EP02
           // Click on the `Product` name
           findProductInTable(product.name).click();
 
           // ASSERT: We're on the `View Product` page
-          expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ViewProductPage.pageIdentifier.isExisting()).toBe(true);
 
           // EP03
           // Click on the `Edit Product` button
           ViewProductPage.editProductButton.click();
 
           // ASSERT: We're on the `Edit Product Page`
-          expect(EditProductPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(EditProductPage.pageIdentifier.isExisting()).toBe(true);
 
           // EP04
           // Clear the `name`, `description` and `price` fields.
@@ -257,7 +258,7 @@ using(productData, function(product) {
           EditProductPage.saveProductButton.click()
 
           // ASSERT: We are taken to the `View Product` screen
-          expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ViewProductPage.pageIdentifier.isExisting()).toBe(true);
 
           // ASSERT: The `name`, `description` and `price` of the product have been updated.
           expect(ViewProductPage.productName.getText()).toBe(product.editName);
@@ -290,20 +291,20 @@ using(productData, function(product) {
           // DP01
           // Navigate to the `Products Page`
           // ASSERT: We're on the `Products Page` of the Website
-          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
 
           // DP02
           // Click on the `Product` name
           findProductInTable(product.name).click();
 
           // ASSERT: We're on the `View Product` page
-          expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ViewProductPage.pageIdentifier.isExisting()).toBe(true);
 
           // DP03
           // Click on the `Delete Product` button
           ViewProductPage.deleteButton.click();
           // ASSERT: We're returned to the `Products Page`
-          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
+          expect(ProductsPage.pageIdentifier.isExisting()).toBe(true);
 
           // ASSERT: The `Product` is no longer listed.
           expect(checkForProductInTable(product.name)).toBe(false);
