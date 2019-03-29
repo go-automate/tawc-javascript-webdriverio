@@ -24,7 +24,7 @@ function deleteProducts(productName){
 
       ViewProductPage.deleteButton.click();
 
-      expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true));
+      expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
 
       counter = counter - 2 ;
     }
@@ -187,7 +187,7 @@ using(productData, function(product) {
           // VP01
           // Navigate to the `Products Page`
           // ASSERT: We're on the `Products Page` of the Website
-          // browser.getUrl() not working - async?
+          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // VERIFY: The `name` and `description` are correct.
           expect(checkForProductInTable(product.name)).toBe(true)
@@ -199,7 +199,7 @@ using(productData, function(product) {
 
 
           // ASSERT: We're on the `View Product` page
-          // browser.getUrl() not working - async?
+          expect
 
           // VERIFY: The `name`, `description` and `price` of the product are correct.
           expect(ViewProductPage.productName.getText()).toBe(product.name);
@@ -223,21 +223,21 @@ using(productData, function(product) {
           // EP01
           // Navigate to the `Products Page`
           // ASSERT: We're on the `Products Page` of the Website
-          // browser.getUrl() not working (async?)
+          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // EP02
           // Click on the `Product` name
           findProductInTable(product.name).click();
 
           // ASSERT: We're on the `View Product` page
-          // browser.getUrl() not working (async?)
+          expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // EP03
           // Click on the `Edit Product` button
           ViewProductPage.editProductButton.click();
 
           // ASSERT: We're on the `Edit Product Page`
-          // browser.getUrl() not working (async?)
+          expect(EditProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // EP04
           // Clear the `name`, `description` and `price` fields.
@@ -257,7 +257,7 @@ using(productData, function(product) {
           EditProductPage.saveProductButton.click()
 
           // ASSERT: We are taken to the `View Product` screen
-          // browser.getUrl() not working (async?)
+          expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // ASSERT: The `name`, `description` and `price` of the product have been updated.
           expect(ViewProductPage.productName.getText()).toBe(product.editName);
@@ -290,20 +290,20 @@ using(productData, function(product) {
           // DP01
           // Navigate to the `Products Page`
           // ASSERT: We're on the `Products Page` of the Website
-          // browser.getUrl() not working (async?)
+          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // DP02
           // Click on the `Product` name
           findProductInTable(product.name).click();
 
           // ASSERT: We're on the `View Product` page
-          // browser.getUrl() not working (async?)
+          expect(ViewProductPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // DP03
           // Click on the `Delete Product` button
           ViewProductPage.deleteButton.click();
           // ASSERT: We're returned to the `Products Page`
-          // browser.getUrl() not working (async?)
+          expect(ProductsPage.pageIdentifier.isDisplayed()).toBe(true);
 
           // ASSERT: The `Product` is no longer listed.
           expect(checkForProductInTable(product.name)).toBe(false);
